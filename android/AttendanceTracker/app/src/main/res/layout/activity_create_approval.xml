@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:id="@+id/mainLayout"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_alignParentTop="true"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary"/>
+
+    <TextView
+        android:id="@+id/textLeaveType"
+        android:layout_below="@+id/toolbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:textSize="16sp"
+        android:text="@string/leave_type"
+        android:textColor="@color/colorBlack"/>
+
+    <Spinner
+        android:id="@+id/spinnerLeaveType"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_below="@+id/textLeaveType" />
+
+    <TextView
+        android:id="@+id/textLeaveReason"
+        android:layout_below="@+id/spinnerLeaveType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginRight="8dp"
+        android:textSize="16sp"
+        android:textColor="@color/colorBlack"
+        android:text="@string/leave_reason"/>
+
+    <EditText
+        android:id="@+id/editTextLeaveReason"
+        android:layout_below="@+id/textLeaveReason"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginRight="8dp"
+        android:minLines="3"
+        android:maxLines="6"
+        android:hint="@string/type_your_reason"
+        android:textSize="16sp"
+        android:gravity="top"
+        android:textColor="@color/colorBlack"
+        android:inputType="textCapSentences|textNoSuggestions|textMultiLine" />
+
+    <TextView
+        android:id="@+id/textLeaveDuration"
+        android:layout_below="@+id/editTextLeaveReason"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginRight="8dp"
+        android:textColor="@color/colorBlack"
+        android:textSize="16sp"
+        android:text="@string/leave_duration"/>
+
+    <LinearLayout
+        android:id="@+id/linearLayoutDuration"
+        android:layout_below="@+id/textLeaveDuration"
+        android:weightSum="2"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginRight="8dp"
+        android:layout_width="match_parent"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/buttonSinceDuration"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:background="@drawable/rounded_background_grey"
+            android:textColor="@color/colorBlack"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="8dp"
+            android:textSize="16sp"
+            android:hint="@string/since" />
+
+        <Button
+            android:id="@+id/buttonUntilDuration"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_background_green"
+            android:textColor="@color/colorWhite"
+            android:textSize="16sp"
+            android:hint="@string/until" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/buttonSubmit"
+        android:layout_below="@+id/linearLayoutDuration"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/rounded_background_blue"
+        android:textColor="@color/colorWhite"
+        android:textSize="16sp"
+        android:text="@string/submit"/>
+
+
+</RelativeLayout>

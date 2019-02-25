@@ -1,0 +1,9 @@
+{
+    "env" : {
+        "PORT" : 8000,
+        "DB_PASSWORD" : "arfansyah",
+        "JWT_KEY" : "secret",
+        "AUTH0_AUDIENCE" : "https://dennyarfansyah.auth0.com/api/v2/",
+        "AUTH0_DOMAIN" : "dennyarfansyah.auth0.com"
+    }
+}

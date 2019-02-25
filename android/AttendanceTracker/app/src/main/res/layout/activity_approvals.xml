@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:id="@+id/mainLayout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <include layout="@layout/item_header" />
+
+    <LinearLayout
+        android:id="@+id/linerLayoutButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/headerView"
+        android:layout_margin="8dp"
+        android:weightSum="3">
+
+        <Button
+            android:id="@+id/buttonPending"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_background_green"
+            android:textColor="@color/colorWhite"
+            android:text="@string/pending"
+            android:layout_marginRight="8dp"
+            android:layout_weight="1"/>
+
+        <Button
+            android:id="@+id/buttonApproved"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_background_grey"
+            android:textColor="@color/colorBlack"
+            android:text="@string/approved"
+            android:layout_marginRight="8dp"
+            android:layout_weight="1"/>
+
+        <Button
+            android:id="@+id/buttonRejected"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_background_grey"
+            android:textColor="@color/colorBlack"
+            android:text="@string/rejected"
+            android:layout_weight="1"/>
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_below="@+id/linerLayoutButton"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_margin="8dp"/>
+
+    <TextView
+        android:id="@+id/textViewNoData"
+        android:layout_centerInParent="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:layout_centerHorizontal="true"
+        android:visibility="gone"
+        android:text="@string/no_data"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_below="@+id/linerLayoutButton"
+        android:layout_above="@+id/navigationView"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/floatingActionButton"
+        android:layout_above="@+id/navigationView"
+        android:layout_margin="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_plus"
+        android:layout_alignParentRight="true"  />
+
+    <android.support.design.widget.BottomNavigationView
+        android:id="@+id/navigationView"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?android:attr/windowBackground"
+        android:elevation="5dp"
+        app:menu="@menu/bottom_menu"
+        app:labelVisibilityMode="labeled"
+        android:layout_alignParentBottom="true"/>
+
+</RelativeLayout>
