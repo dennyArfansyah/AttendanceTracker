@@ -82,11 +82,9 @@ public class DatabaseHelper {
     public static void deleteEmployee(){
         Realm realm = Realm.getDefaultInstance();
         realm.beginTransaction();
-        Employee employee = realm.where(Employee.class).findFirst();
-        employee.deleteFromRealm();
+        realm.where(Employee.class).findFirst().deleteFromRealm();
         realm.commitTransaction();
         realm.close();
-
     }
     // endregion
 
@@ -135,6 +133,14 @@ public class DatabaseHelper {
                 .findAll()
                 .sort("_id", Sort.ASCENDING);
         return approvals;
+    }
+
+    public static void deleteApproval(){
+        Realm realm = Realm.getDefaultInstance();
+        realm.beginTransaction();
+        realm.where(Approval.class).findAll().deleteAllFromRealm();
+        realm.commitTransaction();
+        realm.close();
     }
     // endregion
 

@@ -7,6 +7,7 @@ public class MoreRepository implements MoreContract.Repository {
 
     @Override
     public void doSignOut(Callback callback) {
+        DatabaseHelper.deleteApproval();
         DatabaseHelper.deleteEmployee();
         callback.onSuccess();
     }
