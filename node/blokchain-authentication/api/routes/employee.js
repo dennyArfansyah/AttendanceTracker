@@ -157,11 +157,18 @@ router.post('/signin', (req, res, next) => {
                     };
                     var payload = {};
                     const token = jwt.sign(payload, privateKey, signOptions);
-                    employee[0].token = token
                     return res.status(200).json({
                         status : 'success',
                         message : "SignIn successfull",
-                        data : employee[0]
+                        data : {
+                            _id : employee[0]._id,
+                            name : employee[0].name,
+                            email : employee[0].email,
+                            password : employee[0].password,
+                            dob : employee[0].dob,
+                            division : employee[0].division,
+                            token : token
+                        }
                     });
                 }
                 res.status(401).json({
