@@ -61,9 +61,7 @@ public class FeedsActivity extends BaseActivity implements FeedContract.View {
     }
 
     @Override
-    public void onClick(View v) {
-
-    }
+    public void onClick(View v) {}
 
     @Override
     public void success(List<Feed> feedList) {
